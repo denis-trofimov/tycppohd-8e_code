@@ -1,0 +1,101 @@
+
+
+p.158 line 28: cout << "Area of cylinder is: " << Area (radius) << endl;
+Should be "28:  cout << "Area of circle is: " << Area (radius) << endl;"
+
+p.169 paragraph #1 line #2
+effectively sorting the collection in an ascending order.
+Should be "descending order." as in LISTING 7.12
+
+p.220 LISTING 9.3 line #13: age = 1; // initialization
+Should be "age = 0; // initialization" corresponding to Analysis on same page,
+ "Note how the constructor initializes integer age to zero."
+
+p.199 LISTING 8.16 Using new(nothrow) That Returns NULL When Allocation Fails
+Looks like exeption is compiler dependent. Recived output :"terminate called after throwing an instance of 'std::bad_array_new_length'
+  what():  std::bad_array_new_length
+Aborted
+* ------------------
+(program exited with code: 134)"
+On system "g++ -v
+Using built-in specs.
+COLLECT_GCC=g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/i586-linux-gnu/4.9/lto-wrapper
+Target: i586-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.9.2-10' --with-bugurl=file:///usr/share/doc/gcc-4.9/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.9 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.9 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.9-i386/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.9-i386 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.9-i386 --with-arch-directory=i386 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-targets=all --enable-multiarch --with-arch-32=i586 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=i586-linux-gnu --host=i586-linux-gnu --target=i586-linux-gnu
+Thread model: posix
+gcc version 4.9.2 (Debian 4.9.2-10)"
+
+p. 230 par.3 Analysis "This class basically encapsulates a C-style string in MyString::buffer and relieves
+you of the task of allocating memory; it deallocates the same every time you need
+to use a string."
+Should be "This class basically encapsulates a C-style string in MyString::buffer and relieves
+you of the task of allocating memory; it allocates the same every time you need
+to use a string."
+
+p.249 LISTING 9.13 has error not in the book, but in source code in zip file.
+Missing "#include <cstring>".
+
+p.308 par.2
+virtual void Func1()
+{
+// Func2 overrides Base::Func2()
+}
+Should be "
+virtual void Func1()
+{
+// Func1 overrides Base::Func1()
+}"
+
+p.309 par.2 CDerived objDerived;
+Should be "Derived objDerived;"
+
+p.224 last line
+Human eve("Eve, 18); // eve.age is assigned 18 as specified
+Should be "Human eve("Eve", 18); // eve.age is assigned 18 as specified"
+
+p.312 LISTING 11.6 in the book differs from "11.6 FishABC" in source code in
+zip file.
+Should be in code as in book line 14 (zero based #13)"void Swim()" instead of "void Swim(bool speed = false)". Or else giving compile error :)
+class Tuna:public Fish
+{
+public:
+   void Swim(bool speed = false) //Line 14?, here.
+   {
+      cout << "Tuna swims fast in the sea!" << endl;
+   }
+};
+Giving compile error as:
+"g++ -Wall -o "11.6 FishABC" "11.6 FishABC.cpp" -std=c++14
+11.6 FishABC.cpp: In function ‘int main()’:
+11.6 FishABC.cpp:37:9: error: cannot declare variable ‘myDinner’ to be of abstract type ‘Tuna’
+    Tuna myDinner;
+         ^
+11.6 FishABC.cpp:11:7: note:   because the following virtual functions are pure within ‘Tuna’:
+ class Tuna:public Fish
+       ^
+11.6 FishABC.cpp:8:17: note:    virtual void Fish::Swim()
+    virtual void Swim() = 0;
+"
+Should be in code as in book line 14 (zero based #13)"void Swim()"
+
+Book p.316 par.2 and 11.7 MultipleInheritance_Platypus.cpp lines 44-46 have same error.
+   duckBilledP.Mammal::Animal::age = 25;
+   duckBilledP.Bird::Animal::age = 25;
+   duckBilledP.Reptile::Animal::age = 25;
+Giving compile error as:
+g++ -Wall -c "11.7 MultipleInheritance_Platypus.cpp" -std=c++14 (в каталоге: /home/denis/p/cpp/tycppohd-8e_code)
+11.7 MultipleInheritance_Platypus.cpp: In function ‘int main()’:
+11.7 MultipleInheritance_Platypus.cpp:44:32: error: ‘Animal’ is an ambiguous base of ‘Platypus’
+    duckBilledP.Mammal::Animal::age = 25;
+                                ^
+11.7 MultipleInheritance_Platypus.cpp:45:30: error: ‘Animal’ is an ambiguous base of ‘Platypus’
+    duckBilledP.Bird::Animal::age = 25;
+                              ^
+11.7 MultipleInheritance_Platypus.cpp:46:33: error: ‘Animal’ is an ambiguous base of ‘Platypus’
+    duckBilledP.Reptile::Animal::age = 25;
+                                 ^
+Should be "
+   duckBilledP.Mammal::age = 25;
+   duckBilledP.Bird::age = 25;
+   duckBilledP.Reptile::age = 25;"
