@@ -99,3 +99,11 @@ Should be "
    duckBilledP.Mammal::age = 25;
    duckBilledP.Bird::age = 25;
    duckBilledP.Reptile::age = 25;"
+
+p. 324 line 4 "assigned to newly created objects of type Tuna , Carp , Tuna , and Carp , respectively."
+Should be "assigned to newly created objects of type Tuna , Carp , BluefinTuna , and Carp , respectively."
+
+pp. 712-713 Exercise 11.1 (related to Qiuz 11.1). Answer in the book and in the source code provided have same 6 flaws:
+line 11 should be "class Circle : public Shape"
+line 28 should be "class Triangle : public Shape"
+Should consider using "double Area() override" and "void Print() override" in each class.
