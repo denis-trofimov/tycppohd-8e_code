@@ -1,16 +1,19 @@
 
-
+//-----------------------------------------------------------------------------
 p.158 line 28: cout << "Area of cylinder is: " << Area (radius) << endl;
 Should be "28:  cout << "Area of circle is: " << Area (radius) << endl;"
 
+//-----------------------------------------------------------------------------
 p.169 paragraph #1 line #2
 effectively sorting the collection in an ascending order.
 Should be "descending order." as in LISTING 7.12
 
+//-----------------------------------------------------------------------------
 p.220 LISTING 9.3 line #13: age = 1; // initialization
 Should be "age = 0; // initialization" corresponding to Analysis on same page,
  "Note how the constructor initializes integer age to zero."
 
+//-----------------------------------------------------------------------------
 p.199 LISTING 8.16 Using new(nothrow) That Returns NULL When Allocation Fails
 Looks like exeption is compiler dependent. Recived output :"terminate called after throwing an instance of 'std::bad_array_new_length'
   what():  std::bad_array_new_length
@@ -26,6 +29,7 @@ Configured with: ../src/configure -v --with-pkgversion='Debian 4.9.2-10' --with-
 Thread model: posix
 gcc version 4.9.2 (Debian 4.9.2-10)"
 
+//-----------------------------------------------------------------------------
 p. 230 par.3 Analysis "This class basically encapsulates a C-style string in MyString::buffer and relieves
 you of the task of allocating memory; it deallocates the same every time you need
 to use a string."
@@ -33,9 +37,11 @@ Should be "This class basically encapsulates a C-style string in MyString::buffe
 you of the task of allocating memory; it allocates the same every time you need
 to use a string."
 
+//-----------------------------------------------------------------------------
 p.249 LISTING 9.13 has error not in the book, but in source code in zip file.
 Missing "#include <cstring>".
 
+//-----------------------------------------------------------------------------
 p.308 par.2
 virtual void Func1()
 {
@@ -47,13 +53,16 @@ virtual void Func1()
 // Func1 overrides Base::Func1()
 }"
 
+//-----------------------------------------------------------------------------
 p.309 par.2 CDerived objDerived;
 Should be "Derived objDerived;"
 
+//-----------------------------------------------------------------------------
 p.224 last line
 Human eve("Eve, 18); // eve.age is assigned 18 as specified
 Should be "Human eve("Eve", 18); // eve.age is assigned 18 as specified"
 
+//-----------------------------------------------------------------------------
 p.312 LISTING 11.6 in the book differs from "11.6 FishABC" in source code in
 zip file.
 Should be in code as in book line 14 (zero based #13)"void Swim()" instead of "void Swim(bool speed = false)". Or else giving compile error :)
@@ -100,9 +109,11 @@ Should be "
    duckBilledP.Bird::age = 25;
    duckBilledP.Reptile::age = 25;"
 
+//-----------------------------------------------------------------------------
 p. 324 line 4 "assigned to newly created objects of type Tuna , Carp , Tuna , and Carp , respectively."
 Should be "assigned to newly created objects of type Tuna , Carp , BluefinTuna , and Carp , respectively."
 
+//-----------------------------------------------------------------------------
 pp. 712-713 Exercise 11.1 (related to Qiuz 11.1). Answer in the book and in the source code provided have same 6 flaws:
 line 11 should be "class Circle : public Shape"
 line 28 should be "class Triangle : public Shape"
