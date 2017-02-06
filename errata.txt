@@ -120,10 +120,10 @@ line 28 should be "class Triangle : public Shape"
 Should consider using "double Area() override" and "void Print() override" in each class.
 
 //-----------------------------------------------------------------------------
-p. 340 Stray source code "12.4 CustomSmartPtr.cpp" calling itself
+Stray source code "12.4 CustomSmartPtr.cpp" calling itself
 "// Listing 13.4: illustration of a simple smart pointer class" found.
 It's not mentioned in the book at all.
-Listing 12.4 Calendar Class Featuring the Binary Addition Operator is related to
+Valid listing 12.4 Calendar Class Featuring the Binary Addition Operator is related to
 "12.4 BinaryAdditionSubtractionOperator.cpp" and that's ok.
 
 //-----------------------------------------------------------------------------
