@@ -171,3 +171,31 @@ bool operator< (const Date& compareTo)
 }
 
 //-----------------------------------------------------------------------------
+p. 353. 12.9 line#31 Possible index out of bounds in operator[] in book and source code.
+Examples
+Type a statement: 123123
+Using operator[] for displaying your input:
+1 2 3 1 2 3
+Enter index 0 - 5: -4
+Segmentation fault
+
+Type a statement: aqwqwqwqerwq
+Using operator[] for displaying your input:
+a q w q w q w q e r w q
+Enter index 0 - 11: 20
+Segmentation fault
+
+Should check Index and return something char compatible:
+   const char& operator[] (int Index) const
+   {
+      if (Index < GetLength() && Index >= 0)
+         return Buffer[Index];
+      else
+        return '\0';
+   }
+
+
+//-----------------------------------------------------------------------------
+12.9 Error in source code only. Should have operator[] called in main.
+In "12.9 ArraySubscriptOperator_MyString.cpp" Part of code from another listing.
+main() from p.357.
