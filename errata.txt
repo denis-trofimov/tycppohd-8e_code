@@ -196,6 +196,6 @@ Should check Index and return something char compatible:
 
 
 //-----------------------------------------------------------------------------
-12.9 Error in source code only. Should have operator[] called in main.
-In "12.9 ArraySubscriptOperator_MyString.cpp" Part of code from another listing.
-main() from p.357.
+12.9 Should have operator[] called in main. Error in source code only.
+In "12.9 ArraySubscriptOperator_MyString.cpp"
+Part of code from another listing.main() from p.357.
