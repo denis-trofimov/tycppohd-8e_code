@@ -131,43 +131,43 @@ p. 347 Wrong logic implemented in operator< in book and source code.
 Listing 12.7 Demonstrates Implementing < , <= , > , and >= Operators.
 
 bool operator< (const Date& compareTo)
-   {
-      if (year < compareTo.year)
-         return true;
-      else if (month < compareTo.month)
-         return true;
-      else if (day < compareTo.day)
-         return true;
-      else
-         return false;
-   }
-   same like return (year < compareTo.year) || (month < compareTo.month) || (day < compareTo.day);
-   Given
-   Date holiday1 (12, 25, 2016);
-   Date holiday2 (12, 31, 2015);
-   Returns "operator<: holiday1 happens first"
+{
+  if (year < compareTo.year)
+     return true;
+  else if (month < compareTo.month)
+     return true;
+  else if (day < compareTo.day)
+     return true;
+  else
+     return false;
+}
+same like return (year < compareTo.year) || (month < compareTo.month) || (day < compareTo.day);
+Given
+Date holiday1 (12, 25, 2016);
+Date holiday2 (12, 31, 2015);
+Returns "operator<: holiday1 happens first"
 
-   Should return"
-   holiday 1 is: 12 / 31 / 2015
+Should return:"
+holiday 1 is: 12 / 31 / 2015
 holiday 2 is: 12 / 25 / 2016
 operator<: holiday1 happens first
 operator>: holiday2 happens later
 operator<=: holiday1 happens on or before holiday2
-operator>=: holiday2 happens on or after holiday1
-"
+operator>=: holiday2 happens on or after holiday1"
 
-    bool operator< (const Date& compareTo)
-    {
-        if (year < compareTo.year)
-            return true;
-        if (year <= compareTo.year && month < compareTo.month)
-            return true;
-        if (year <= compareTo.year
-            && month <= compareTo.month
-            && day < compareTo.day)
-            return true;
-        else
-            return false;
-   }
+Better code:
+bool operator< (const Date& compareTo)
+{
+    if (year < compareTo.year)
+        return true;
+    if (year <= compareTo.year && month < compareTo.month)
+        return true;
+    if (year <= compareTo.year
+        && month <= compareTo.month
+        && day < compareTo.day)
+        return true;
+    else
+        return false;
+}
 
 //-----------------------------------------------------------------------------
