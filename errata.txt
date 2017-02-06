@@ -196,6 +196,20 @@ Should check Index and return something char compatible:
 
 
 //-----------------------------------------------------------------------------
-12.9 Should have operator[] called in main. Error in source code only.
+12.9 Should have operator[] called in main(). Error in source code only.
 In "12.9 ArraySubscriptOperator_MyString.cpp"
-Part of code from another listing.main() from p.357.
+Part of code from another listing, main() from p.357.
+
+//-----------------------------------------------------------------------------
+p.362 My output differs from the one. Move constructor have not been called.
+The code "12.11 MoveConstructorAssignmentOperator.cpp" looks allright.
+
+Constructor called for: Hello
+Constructor called for: World
+Constructor called for:  of C++
+Constructor called for: overwrite this
+operator+ called:
+Default constructor called
+operator+ called:
+Default constructor called
+Move assignment op. moves: Hello World of C++
