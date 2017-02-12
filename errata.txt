@@ -213,3 +213,22 @@ Default constructor called
 operator+ called:
 Default constructor called
 Move assignment op. moves: Hello World of C++
+
+//-----------------------------------------------------------------------------
+2017-02-10
+p. 377 par.2 line 3 A typo in the name?
+unsigned char* bytesFoAPI = reinterpret_cast<unsigned char*>(object);
+Did author wanted to write this?
+ "unsigned char* bytesForAPI = reinterpret_cast<unsigned char*>(object);"
+
+p. 379 par 1 line 4 A typo in the comment.
+int num = static_cast <int>(Pi); // result: Num is 3
+Did author wanted to write this?
+int num = static_cast <int>(Pi); // result: num is 3
+
+//-----------------------------------------------------------------------------
+14.2 MacroFunctions.cpp have one extra line compared to book p. 389 line 3
+#define AREA_CIRCLE(r) (PI*(r)*(r))
+// #define AREA_CIRCLE(r) (PI*r*r) // uncomment this to understand why brackets are important (comment previous line)
+To show an example of importance of the parentheses?
+But in this example one can skip the parentheses (it shows no difference in result) because "r" is used as a simple int.
